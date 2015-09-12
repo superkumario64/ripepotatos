@@ -3,5 +3,7 @@ class MoviesController < ApplicationController
   end
   def show
     @movie_id = params[:id]
+    @movie_title = params[:title]
+    puts params
   end
 end

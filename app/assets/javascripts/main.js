@@ -12,16 +12,17 @@ Ripepotatos.prototype.moviesLoaded = function (){
 
 var app = new Ripepotatos;
 var searchTerms = ["george","peter","sabra", "villa", "kumar"];
-var apiUrl = "http://www.omdbapi.com/?t=";
+var apiUrl = "http://api.themoviedb.org/3/search/movie?api_key=81c50c197b83129dd4fc387ca6c8c323&limit=4&query=kumar";
 var moviesLoaded = false;
-for(var i = 0; i<searchTerms.length; i++){
+//for(var i = 0; i<searchTerms.length; i++){
   $.ajax({
     dataType: "json",
-    url: apiUrl+searchTerms[i],
+    url: apiUrl,
     data: {},
     success: function (data) {
       app.movies.push(data);
-      if (app.movies.length == searchTerms.length) app.moviesLoaded();
+      console.log(data);
+      //if (app.movies.length == searchTerms.length) app.moviesLoaded();
     }
   });
-}
+//}
