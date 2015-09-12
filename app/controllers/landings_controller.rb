@@ -1,5 +1,5 @@
 class LandingsController < ApplicationController
   def index
-    @mov_path = movies_path
+    gon.movies_url = movies_path;
   end
 end
