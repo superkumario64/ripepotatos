@@ -9,8 +9,14 @@
 </head>
 <body>
 <%= render partial: "elements/navbar" %>
+<% flash.each do |name, msg| %>
+	<%= content_tag(:div, msg, class: "alert alert-info") %>
+<% end %>
 
-<%= yield %>
+
+<div id="content" class="col-md-9 center-block">
+	<%= yield %>
+</div>
 
 </body>
 </html>
